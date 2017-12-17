@@ -8,7 +8,7 @@ export class BtnFormatDirective {
   constructor( private el: ElementRef ) { }
 
   @HostListener('click') onClick() {
-    let value: string = this.el.nativeElement.value;
+    const value: string = this.el.nativeElement.value;
     this.el.nativeElement.value = value.toUpperCase();
   }
 
