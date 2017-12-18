@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-md-6">
-    <form [formGroup]="form">
-
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <div *ngIf="form.errors" class="alert alert-danger">
+        Username or Password is invalid
+      </div>
       <input type="text" class="form-control" formControlName="username">
       <div *ngIf="username.pending">Checking for validation...</div>
       <div *ngIf="username.invalid && username.touched" class="alert alert-danger">
